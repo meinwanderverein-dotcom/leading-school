@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>leading:school · Führungsarbeit für die Schule von morgen</title>
+<meta name="description" content="leading:school stärkt Schulleitung und Schulen von innen. Bewusste, wirksame Führungsarbeit: individuelle Begleitung und Workshops. Kostenlos, gefördert von TGW Future Wings." />
+<!--
+  ============================================================
+  leading:school – Nachbau als Single-File-HTML
+  Bilder sind Platzhalter (picsum.photos). Zum Austausch einfach
+  die src-Attribute mit data-photo="..." durch eigene Fotos ersetzen:
+    data-photo="hero"            → /photos/hero-workshop.jpg
+    data-photo="teamentwicklung" → /photos/teamentwicklung.jpg
+    data-photo="begleitung"      → /photos/begleitung.jpg
+    data-photo="vision"          → /photos/vision.jpg
+    data-photo="eva"             → /team/eva-kirchmayr.jpg
+    data-photo="matthias"        → /team/matthias-uhl.jpg
+  Das Logo ist als Wortmarke nachgebaut – kann durch das
+  Original-PNG (leadingschool-logo.png) ersetzt werden.
+  ============================================================
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ====== wiederverwendbare Blatt-Grafik ====== -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="ls-g-main" x1="18" y1="46" x2="46" y2="16" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#34501a"/><stop offset="0.55" stop-color="#9dc73c"/><stop offset="1" stop-color="#ecd61c"/>
+    </linearGradient>
+    <linearGradient id="ls-g-deep" x1="18" y1="46" x2="46" y2="16" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#2c4416"/><stop offset="1" stop-color="#5f8d22"/>
+    </linearGradient>
+    <linearGradient id="ls-g-lime" x1="18" y1="46" x2="46" y2="16" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#9dc73c"/><stop offset="1" stop-color="#ecd61c"/>
+    </linearGradient>
+    <linearGradient id="ls-g-sun" x1="18" y1="46" x2="46" y2="16" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#c2de46"/><stop offset="1" stop-color="#ecd61c"/>
+    </linearGradient>
+    <path id="ls-leaf" d="M20 44c0-14 9-24 24-26-2 14-10 23-24 26z"/>
+  </defs>
+</svg>
+
+<!-- ============ Header ============ -->
+<header class="site-header" id="siteHeader">
+  <div class="header-bar">
+    <div class="brand-rule" aria-hidden="true"></div>
+    <div class="header-inner">
+      <a href="#" class="logo" aria-label="leading:school, zur Startseite">
+        <svg class="leaf" viewBox="0 0 64 64" fill="none" aria-hidden="true"><use href="#ls-leaf" fill="url(#ls-g-main)"/></svg>
+        <span>leading<span class="colon">:</span>school</span>
+      </a>
+      <nav class="main-nav" aria-label="Hauptnavigation">
+        <a href="#angebot">Angebot</a>
+        <a href="#ablauf">Ablauf</a>
+        <a href="#team">Über uns</a>
+        <a href="#blog">Blog</a>
+      </nav>
+      <div style="display:flex; align-items:center; gap:8px;">
+        <a class="btn btn-primary btn-md header-cta" href="#kontakt">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 256 256"><path d="M208,28H188V24a12,12,0,0,0-24,0v4H92V24a12,12,0,0,0-24,0v4H48A20,20,0,0,0,28,48V208a20,20,0,0,0,20,20H208a20,20,0,0,0,20-20V48A20,20,0,0,0,208,28ZM68,52a12,12,0,0,0,24,0h72a12,12,0,0,0,24,0h16V76H52V52ZM52,204V100H204V204Zm120.49-84.49a12,12,0,0,1,0,17l-48,48a12,12,0,0,1-17,0l-24-24a12,12,0,0,1,17-17L116,159l39.51-39.52A12,12,0,0,1,172.49,119.51Z"/></svg>
+          Termin vereinbaren
+        </a>
+        <button type="button" class="menu-btn" id="menuBtn" aria-label="Menü öffnen" aria-expanded="false">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 256 256"><path d="M228,128a12,12,0,0,1-12,12H40a12,12,0,0,1,0-24H216A12,12,0,0,1,228,128ZM40,76H216a12,12,0,0,0,0-24H40a12,12,0,0,0,0,24ZM216,180H40a12,12,0,0,0,0,24H216a12,12,0,0,0,0-24Z"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- Mobiles Menü -->
+<div class="mobile-menu" id="mobileMenu">
+  <div class="top">
+    <a href="#" class="logo">
+      <svg class="leaf" viewBox="0 0 64 64" fill="none" aria-hidden="true"><use href="#ls-leaf" fill="url(#ls-g-main)"/></svg>
+      <span>leading<span class="colon">:</span>school</span>
+    </a>
+    <button type="button" class="menu-btn" id="menuClose" aria-label="Menü schließen">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 256 256"><path d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z"/></svg>
+    </button>
+  </div>
+  <nav aria-label="Mobile Navigation">
+    <a href="#angebot">Angebot</a>
+    <a href="#ablauf">Ablauf</a>
+    <a href="#team">Über uns</a>
+    <a href="#blog">Blog</a>
+  </nav>
+  <a class="btn btn-primary btn-lg" href="#kontakt">Termin vereinbaren</a>
+</div>
+
+<main>
+
+<!-- ============ Hero ============ -->
+<section class="hero">
+  <div class="hero-bg" aria-hidden="true">
+    <div class="hero-blob"></div>
+    <svg viewBox="0 0 200 160" class="hero-leaves" fill="none" role="presentation">
+      <g transform="translate(6 92) rotate(-10) scale(0.72)"><g class="animate-drift-alt" style="animation-delay:0s"><use href="#ls-leaf" fill="url(#ls-g-deep)" opacity="0.5"/></g></g>
+      <g transform="translate(44 104) rotate(4) scale(1.05)"><g class="animate-drift" style="animation-delay:.7s"><use href="#ls-leaf" fill="url(#ls-g-main)" opacity="0.92"/></g></g>
+      <g transform="translate(98 74) rotate(-6) scale(1.35)"><use href="#ls-leaf" fill="url(#ls-g-main)"/></g>
+      <g transform="translate(150 92) rotate(12) scale(0.9)"><g class="animate-drift-alt" style="animation-delay:2.1s"><use href="#ls-leaf" fill="url(#ls-g-lime)" opacity="0.85"/></g></g>
+      <g transform="translate(124 28) rotate(-20) scale(0.66)"><g class="animate-drift" style="animation-delay:2.8s"><use href="#ls-leaf" fill="url(#ls-g-lime)" opacity="0.72"/></g></g>
+      <g transform="translate(170 36) rotate(26) scale(0.5)"><g class="animate-drift-alt" style="animation-delay:3.5s"><use href="#ls-leaf" fill="url(#ls-g-sun)" opacity="0.6"/></g></g>
+    </svg>
+  </div>
+
+  <div class="container hero-grid">
+    <div>
+      <span class="badge reveal">
+        <svg class="leaf" viewBox="0 0 64 64" fill="none" aria-hidden="true"><use href="#ls-leaf" fill="url(#ls-g-main)"/></svg>
+        Führungsarbeit für die Schule von morgen
+      </span>
+      <h1 class="reveal" style="--d:.08s">Wir stärken Schulleitung und Schulen <span class="text-gradient">von innen.</span></h1>
+      <p class="lead reveal" style="--d:.16s">leading:school bietet fokussierte, auf Ihren Schulkontext angepasste, Entwicklungsprozesse. Wir stärken die Führungsarbeit. Wir begleiten Teams in moderierten Workshops. Kostenlos.</p>
+      <div class="hero-ctas reveal" style="--d:.24s">
+        <a class="btn btn-primary btn-lg" href="#kontakt">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 256 256"><path d="M208,28H188V24a12,12,0,0,0-24,0v4H92V24a12,12,0,0,0-24,0v4H48A20,20,0,0,0,28,48V208a20,20,0,0,0,20,20H208a20,20,0,0,0,20-20V48A20,20,0,0,0,208,28ZM68,52a12,12,0,0,0,24,0h72a12,12,0,0,0,24,0h16V76H52V52ZM52,204V100H204V204Zm120.49-84.49a12,12,0,0,1,0,17l-48,48a12,12,0,0,1-17,0l-24-24a12,12,0,0,1,17-17L116,159l39.51-39.52A12,12,0,0,1,172.49,119.51Z"/></svg>
+          Termin vereinbaren
+        </a>
+        <a class="btn btn-secondary btn-lg" href="#ablauf">
+          So arbeiten wir
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 256 256"><path d="M224.49,136.49l-72,72a12,12,0,0,1-17-17L187,140H40a12,12,0,0,1,0-24H187L135.51,64.48a12,12,0,0,1,17-17l72,72A12,12,0,0,1,224.49,136.49Z"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="hero-photo reveal scale" style="--d:.2s">
+      <div class="brand-frame">
+        <div class="frame-inner" style="background:var(--canvas);">
+          <svg viewBox="0 0 400 500" xmlns="http://www.w3.org/2000/svg"
+               font-family="'Figtree', system-ui, sans-serif"
+               style="width:100%; height:100%; display:block;"
+               role="img"
+               aria-label="Führungsmodell: Führung stärkt Veränderungskraft und Kooperationskultur im Bildungssystem der Zukunft">
+            <defs>
+              <radialGradient id="hg-fuehrung" cx="38%" cy="38%" r="62%">
+                <stop offset="0%" stop-color="#ecd61c"/>
+                <stop offset="100%" stop-color="#9dc73c"/>
+              </radialGradient>
+              <filter id="hg-shadow" x="-50%" y="-50%" width="200%" height="200%">
+                <feDropShadow dx="0" dy="5" stdDeviation="14" flood-color="#2c4416" flood-opacity="0.22"/>
+              </filter>
+            </defs>
+
+            <!-- Äußerster Ring: Bildungssystem der Zukunft -->
+            <circle cx="200" cy="265" r="171"
+                    fill="none"
+                    stroke="#5f8d22" stroke-width="1.5" stroke-dasharray="4 7" opacity="0.4"/>
+
+            <!-- Ring: Kooperationskultur -->
+            <circle cx="200" cy="265" r="137"
+                    fill="rgba(157,199,60,0.15)"
+                    stroke="rgba(95,141,34,0.28)" stroke-width="1"/>
+
+            <!-- Ring: Veränderungskraft -->
+            <circle cx="200" cy="265" r="99"
+                    fill="rgba(95,141,34,0.27)"
+                    stroke="rgba(72,111,24,0.38)" stroke-width="1"/>
+
+            <!-- Zentrum: Führung -->
+            <circle cx="200" cy="265" r="56"
+                    fill="url(#hg-fuehrung)"
+                    filter="url(#hg-shadow)"/>
+
+            <!-- Beschriftungen -->
+            <text text-anchor="middle"
+                  font-size="13" font-weight="700" letter-spacing="-0.01em"
+                  fill="#2c4416">
+              <tspan x="200" y="108">Bildungssystem</tspan>
+              <tspan x="200" y="123">der Zukunft</tspan>
+            </text>
+
+            <text x="200" y="155" text-anchor="middle"
+                  font-size="13" font-weight="700" letter-spacing="-0.01em"
+                  fill="#2c4416">Kooperationskultur</text>
+
+            <text x="200" y="192" text-anchor="middle"
+                  font-size="13" font-weight="700" letter-spacing="-0.01em"
+                  fill="#2c4416">Veränderungskraft</text>
+
+            <text x="200" y="265" text-anchor="middle" dominant-baseline="middle"
+                  font-size="20" font-weight="900" letter-spacing="-0.03em"
+                  fill="#243a10">Führung</text>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Trust-Bar ============ -->
+<section class="bg-alt" style="position:relative">
+  <div class="brand-rule" aria-hidden="true"></div>
+  <div class="container trustbar-inner">
+    <ul class="trust-list">
+      <li>
+        <span class="icon-disc"><svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" fill="currentColor" viewBox="0 0 256 256"><path d="M192.94,189.66a12,12,0,0,1-.94,17A84,84,0,0,1,53.55,160H40a12,12,0,0,1,0-24H52V120H40a12,12,0,0,1,0-24H53.55A84,84,0,0,1,192,49.39a12,12,0,0,1-16,17.89A60,60,0,0,0,78.18,96H136a12,12,0,0,1,0,24H76v16h44a12,12,0,0,1,0,24H78.18A60,60,0,0,0,176,188.72,12,12,0,0,1,192.94,189.66Z"/></svg></span>
+        100&nbsp;% kostenlos
+      </li>
+      <li>
+        <span class="icon-disc"><svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" fill="currentColor" viewBox="0 0 256 256"><path d="M232.76,137.88a28.66,28.66,0,0,0-12-5.39C236.19,114.94,244,97.37,244,80c0-28.67-23.09-52-51.46-52A51.77,51.77,0,0,0,156,42.85,51.77,51.77,0,0,0,119.46,28C91.09,28,68,51.33,68,80c0,10.15,2.72,20.3,8.22,30.7a35.9,35.9,0,0,0-11.73,7.84L43,140H20A20,20,0,0,0,0,160v40a20,20,0,0,0,20,20H120a11.89,11.89,0,0,0,2.91-.36l64-16a11.4,11.4,0,0,0,1.79-.6l38.82-16.54c.23-.09.45-.19.67-.3a28.61,28.61,0,0,0,4.57-48.32ZM119.46,52A27.18,27.18,0,0,1,144.9,68.56a12,12,0,0,0,22.2,0A27.18,27.18,0,0,1,192.54,52C207.42,52,220,64.82,220,80c0,18.06-15,38.84-43.38,60.19L172,141.26c0-.42,0-.84,0-1.26a32,32,0,0,0-32-32H102.71C95.42,97.76,92,88.77,92,80,92,64.82,104.58,52,119.46,52ZM24,164H36v32H24Zm193.68.61-37.51,16L118.52,196H60V157l21.46-21.46A11.93,11.93,0,0,1,89.94,132H140a8,8,0,0,1,0,16H112a12,12,0,0,0,0,24h32a12.19,12.19,0,0,0,2.69-.3l67-15.41.47-.12a4.61,4.61,0,0,1,5.82,4.44A4.58,4.58,0,0,1,217.68,164.61Z"/></svg></span>
+        Individuelle Begleitung
+      </li>
+      <li>
+        <span class="icon-disc"><svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" fill="currentColor" viewBox="0 0 256 256"><path d="M200,220H160.73c5.18-5,10.75-10.71,16.33-17.13C205.15,170.57,220,136.37,220,104a92,92,0,0,0-184,0c0,50,34.12,91.94,59.18,116H56a12,12,0,0,0,0,24H200a12,12,0,0,0,0-24ZM60,104a68,68,0,0,1,136,0c0,33.31-20,63.37-36.7,82.71A249.35,249.35,0,0,1,128,216.89a249.35,249.35,0,0,1-31.3-30.18C80,167.37,60,137.31,60,104Zm68,44a44,44,0,1,0-44-44A44.05,44.05,0,0,0,128,148Zm0-64a20,20,0,1,1-20,20A20,20,0,0,1,128,84Z"/></svg></span>
+        In Ihrem Schulkontext
+      </li>
+    </ul>
+    <p class="trust-note">Ein Angebot der B.E.L. Mindfactory, gefördert von
+      <a class="link-brand" href="https://www.tgw-futurewings.org" target="_blank" rel="noopener noreferrer">TGW Future Wings
+        <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="currentColor" viewBox="0 0 256 256"><path d="M204,64V168a12,12,0,0,1-24,0V93L72.49,200.49a12,12,0,0,1-17-17L163,76H88a12,12,0,0,1,0-24H192A12,12,0,0,1,204,64Z"/></svg>
+      </a>
+    </p>
+  </div>
+</section>
+
+<!-- ============ Rollen ============ -->
+<section class="section">
+  <div class="container roles-grid">
+    <div>
+      <div class="reveal">
+        <h2 class="h2">Schulleitung heißt, vieles gleichzeitig zu sein.</h2>
+        <p class="sub" style="max-width:28rem">Kann man das alles sein? Genau dieser Anspruch wird an Schulleitungen gestellt, Tag für Tag, oft ohne ausreichend Rückhalt und ohne entsprechende Rahmenbedingungen.</p>
+      </div>
+      <p class="roles-claim reveal" style="--d:.12s">
+        <svg class="leaf" viewBox="0 0 64 64" fill="none" aria-hidden="true"><use href="#ls-leaf" fill="url(#ls-g-main)"/></svg>
+        <span>leading:school stärkt die Schulleitung und die Schulen <span class="text-gradient">von innen</span>, damit aus Druck wieder Gestaltungskraft wird. Für die Schulen der Zukunft.</span>
+      </p>
+    </div>
+    <div class="chips">
+      <span class="chip chip-outline reveal" style="--d:0s">Managerin</span>
+      <span class="chip chip-bright reveal" style="--d:.06s">Pädagogischer Visionär</span>
+      <span class="chip chip-outline reveal" style="--d:.12s">Sozialarbeiter</span>
+      <span class="chip chip-bright reveal" style="--d:.18s">Schulentwicklerin</span>
+      <span class="chip chip-bright reveal" style="--d:.24s">Problemlöser</span>
+      <span class="chip chip-outline reveal" style="--d:.3s">Coach</span>
+      <span class="chip chip-bright reveal" style="--d:.36s">Krisenmanagerin</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Angebot ============ -->
+<section id="angebot" class="section bg-alt">
+  <div class="container">
+    <div class="reveal">
+      <span class="eyebrow">
+        <svg class="leaf" viewBox="0 0 64 64" fill="none" aria-hidden="true"><use href="#ls-leaf" fill="url(#ls-g-main)"/></svg>
+        Unser Angebot
+      </span>
+      <h2 class="h2" style="margin-top:20px; max-width:42rem">Drei Schwerpunkte, ein Ziel: Schulen, die sich aus eigener Kraft weiterentwickeln.</h2>
+    </div>
+
+    <div class="offer-grid">
+      <div class="span-3 reveal">
+        <article class="card card-pad">
+          <svg class="leaf-ghost" viewBox="0 0 64 64" fill="none" aria-hidden="true"><use href="#ls-leaf" fill="url(#ls-g-main)"/></svg>
+          <span class="icon-tile"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" viewBox="0 0 256 256"><path d="M236,208a12,12,0,0,1-12,12H32a12,12,0,0,1-12-12V48a12,12,0,0,1,24,0v99l43.51-43.52a12,12,0,0,1,17,0L128,127l43-43H160a12,12,0,0,1,0-24h40a12,12,0,0,1,12,12v40a12,12,0,0,1-24,0V101l-51.51,51.52a12,12,0,0,1-17,0L96,129,44,181v15H224A12,12,0,0,1,236,208Z"/></svg></span>
+          <h3>Stärkung der Managementkompetenz</h3>
+          <p class="body">Wir stärken Ihre Führungsarbeit, damit Sie die verschiedenen Erwartungshaltungen gut balancieren können.</p>
+        </article>
+      </div>
+
+      <div class="span-3 reveal" style="--d:.08s">
+        <article class="card card-bright card-pad">
+          <span class="icon-tile"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" viewBox="0 0 256 256"><path d="M228,48V96a12,12,0,0,1-12,12H168a12,12,0,0,1,0-24h19l-7.8-7.8a75.55,75.55,0,0,0-53.32-22.26h-.43A75.49,75.49,0,0,0,72.39,75.57,12,12,0,1,1,55.61,58.41a99.38,99.38,0,0,1,69.87-28.47H126A99.42,99.42,0,0,1,196.2,59.23L204,67V48a12,12,0,0,1,24,0ZM183.61,180.43a75.49,75.49,0,0,1-53.09,21.63h-.43A75.55,75.55,0,0,1,76.77,179.8L69,172H88a12,12,0,0,0,0-24H40a12,12,0,0,0-12,12v48a12,12,0,0,0,24,0V189l7.8,7.8A99.42,99.42,0,0,0,130,226.06h.56a99.38,99.38,0,0,0,69.87-28.47,12,12,0,0,0-16.78-17.16Z"/></svg></span>
+          <h3>Wirksame Veränderungsprozesse</h3>
+          <p class="body">Wir schaffen einen Rahmen, damit Sie kleine und große Veränderungsvorhaben kraftvoll umsetzen können.</p>
+        </article>
+      </div>
+
+      <div class="span-6 reveal" style="--d:.12s">
+        <article class="card card-split">
+          <div class="media">
+            <img data-photo="teamentwicklung" src="images/photos/Kooperation.jpg" alt="Team in einer gemeinsamen Aktivität – Teamentwicklung mit leading:school" loading="lazy" />
+            <div class="tint" aria-hidden="true"></div>
+          </div>
+          <div class="content">
+            <span class="icon-tile"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" viewBox="0 0 256 256"><path d="M164.38,181.1a52,52,0,1,0-72.76,0,75.89,75.89,0,0,0-30,28.89,12,12,0,0,0,20.78,12,53,53,0,0,1,91.22,0,12,12,0,1,0,20.78-12A75.89,75.89,0,0,0,164.38,181.1ZM100,144a28,28,0,1,1,28,28A28,28,0,0,1,100,144Zm147.21,9.59a12,12,0,0,1-16.81-2.39c-8.33-11.09-19.85-19.59-29.33-21.64a12,12,0,0,1-1.82-22.91,20,20,0,1,0-24.78-28.3,12,12,0,1,1-21-11.6,44,44,0,1,1,73.28,48.35,92.18,92.18,0,0,1,22.85,21.69A12,12,0,0,1,247.21,153.59Zm-192.28-24c-9.48,2.05-21,10.55-29.33,21.65A12,12,0,0,1,6.41,136.79,92.37,92.37,0,0,1,29.26,115.1a44,44,0,1,1,73.28-48.35,12,12,0,1,1-21,11.6,20,20,0,1,0-24.78,28.3,12,12,0,0,1-1.82,22.91Z"/></svg></span>
+            <h3>Tiefgehende Teamentwicklung</h3>
+            <p class="body" style="max-width:32rem">Wir stellen wirksame, erprobte Methoden für Teamarbeit und Konfliktmanagement zur Verfügung, um gemeinsam mit Freude Schule zu leben.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Ablauf ============ -->
+<section id="ablauf" class="section">
+  <div class="container flow-grid">
+    <div class="flow-sticky">
+      <div class="reveal">
+        <h2 class="h2">Wie läuft die Begleitung an Ihrer Schule ab?</h2>
+        <p class="sub" style="max-width:28rem">Gemeinsam entwickeln wir fokussierte, auf Ihren Schulkontext angepasste Entwicklungsprozesse, individuell begleitet und moderiert.</p>
+      </div>
+      <div class="flow-photo reveal" style="--d:.1s">
+        <div class="brand-frame">
+          <div class="frame-inner">
+            <img data-photo="begleitung" src="images/photos/Begleitung.jpg" alt="Individuelle Begleitung am Tisch" loading="lazy" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <ol class="steps">
+      <li class="step reveal">
+        <div class="step-track">
+          <span class="step-num">1</span>
+          <span class="step-line" aria-hidden="true"></span>
+        </div>
+        <div class="step-body">
+          <h3>Kennenlernen</h3>
+          <p>In einem kostenlosen Erstgespräch klären wir Ihre Situation, Ihre Themen und was Sie sich für Ihre Schule wünschen.</p>
+        </div>
+      </li>
+      <li class="step reveal" style="--d:.08s">
+        <div class="step-track">
+          <span class="step-num">2</span>
+          <span class="step-line" aria-hidden="true"></span>
+        </div>
+        <div class="step-body">
+          <h3>Fokus finden</h3>
+          <p>Gemeinsam definieren wir einen Entwicklungsprozess, der genau zu Ihrem Schulkontext passt, nicht von der Stange.</p>
+        </div>
+      </li>
+      <li class="step reveal" style="--d:.16s">
+        <div class="step-track">
+          <span class="step-num">3</span>
+        </div>
+        <div class="step-body">
+          <h3>Begleiten &amp; umsetzen</h3>
+          <p>Mit individueller Begleitung und moderierten Workshops bringen wir Veränderung wirksam und nachhaltig auf den Boden.</p>
+        </div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============ Team ============ -->
+<section id="team" class="section bg-alt">
+  <div class="container">
+    <div class="reveal" style="max-width:42rem">
+      <h2 class="h2">Wir verbinden zwei Welten: Schule und Wirtschaft.</h2>
+      <p class="sub">Die Innenwelt und die Außenwelt. Aus dieser Verbindung entsteht Führungsarbeit, die in der Praxis trägt: fachlich fundiert und nah am Schulalltag.</p>
+    </div>
+
+    <div class="team-grid">
+      <div class="reveal">
+        <article class="team-card">
+          <div class="team-photo">
+            <div class="inner">
+              <img data-photo="eva" src="images/team/Portrait_Eva.jpg" alt="Eva Kirchmayr" loading="lazy" />
+            </div>
+          </div>
+          <div>
+            <h3>Eva Kirchmayr</h3>
+            <p class="role">Schulleitung B.E.L. Privatschule</p>
+            <a class="mail" href="mailto:eva.kirchmayr@mindfactory.at">
+              <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" fill="currentColor" viewBox="0 0 256 256"><path d="M224,44H32A12,12,0,0,0,20,56V192a20,20,0,0,0,20,20H216a20,20,0,0,0,20-20V56A12,12,0,0,0,224,44ZM193.15,68,128,127.72,62.85,68ZM44,188V83.28l75.89,69.57a12,12,0,0,0,16.22,0L212,83.28V188Z"/></svg>
+              eva.kirchmayr@mindfactory.at
+            </a>
+          </div>
+        </article>
+      </div>
+      <div class="reveal" style="--d:.08s">
+        <article class="team-card">
+          <div class="team-photo">
+            <div class="inner">
+              <img data-photo="matthias" src="images/team/Portrait_Matthias.jpg" alt="Matthias Uhl" loading="lazy" />
+            </div>
+          </div>
+          <div>
+            <h3>Matthias Uhl</h3>
+            <p class="role">Unternehmensberater &amp; Prozessbegleiter in Wirtschaft und Bildung</p>
+            <a class="mail" href="mailto:matthias.uhl@mindfactory.at">
+              <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" fill="currentColor" viewBox="0 0 256 256"><path d="M224,44H32A12,12,0,0,0,20,56V192a20,20,0,0,0,20,20H216a20,20,0,0,0,20-20V56A12,12,0,0,0,224,44ZM193.15,68,128,127.72,62.85,68ZM44,188V83.28l75.89,69.57a12,12,0,0,0,16.22,0L212,83.28V188Z"/></svg>
+              matthias.uhl@mindfactory.at
+            </a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Vision ============ -->
+<section class="vision">
+  <img data-photo="vision" src="https://picsum.photos/seed/leadingschool-vision/2400/1400" alt="" loading="lazy" />
+  <div class="overlay" aria-hidden="true"></div>
+  <svg viewBox="0 0 200 160" class="vision-leaves" fill="none" role="presentation" aria-hidden="true">
+    <g transform="translate(6 92) rotate(-10) scale(0.72)"><g class="animate-drift-alt"><use href="#ls-leaf" fill="url(#ls-g-deep)" opacity="0.5"/></g></g>
+    <g transform="translate(44 104) rotate(4) scale(1.05)"><g class="animate-drift" style="animation-delay:.7s"><use href="#ls-leaf" fill="url(#ls-g-main)" opacity="0.92"/></g></g>
+    <g transform="translate(98 74) rotate(-6) scale(1.35)"><use href="#ls-leaf" fill="url(#ls-g-main)"/></g>
+    <g transform="translate(150 92) rotate(12) scale(0.9)"><g class="animate-drift-alt" style="animation-delay:2.1s"><use href="#ls-leaf" fill="url(#ls-g-lime)" opacity="0.85"/></g></g>
+    <g transform="translate(124 28) rotate(-20) scale(0.66)"><g class="animate-drift" style="animation-delay:2.8s"><use href="#ls-leaf" fill="url(#ls-g-lime)" opacity="0.72"/></g></g>
+    <g transform="translate(170 36) rotate(26) scale(0.5)"><g class="animate-drift-alt" style="animation-delay:3.5s"><use href="#ls-leaf" fill="url(#ls-g-sun)" opacity="0.6"/></g></g>
+  </svg>
+  <div class="container vision-inner">
+    <div class="reveal">
+      <span class="eyebrow">
+        <svg class="leaf" viewBox="0 0 64 64" fill="none" aria-hidden="true"><use href="#ls-leaf" fill="url(#ls-g-lime)"/></svg>
+        Unsere Vision
+      </span>
+      <blockquote>Wir glauben an die strahlende Kraft von lebendigen Schulen.</blockquote>
+      <div class="rule" aria-hidden="true"></div>
+      <p class="note">leading:school hat die Vision, die Bildungsarbeit in Österreich wirkungsvoller zu gestalten, getragen von der B.E.L. Mindfactory und gefördert von TGW Future Wings.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Blog ============ -->
+<section id="blog" class="section">
+  <div class="container">
+    <div class="blog-head reveal">
+      <h2 class="h2">Aus dem Blog</h2>
+      <a class="link-brand" href="#blog" style="font-size:.95rem; font-weight:600; gap:6px;">
+        Alle Artikel
+        <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" fill="currentColor" viewBox="0 0 256 256"><path d="M224.49,136.49l-72,72a12,12,0,0,1-17-17L187,140H40a12,12,0,0,1,0-24H187L135.51,64.48a12,12,0,0,1,17-17l72,72A12,12,0,0,1,224.49,136.49Z"/></svg>
+      </a>
+    </div>
+
+    <div class="blog-grid">
+      <div class="reveal">
+        <article class="card post-card" style="justify-content:center;">
+          <div class="content" style="display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:48px 32px; gap:16px;">
+            <svg class="leaf" viewBox="0 0 64 64" fill="none" aria-hidden="true" style="width:40px; height:40px;"><use href="#ls-leaf" fill="url(#ls-g-main)"/></svg>
+            <h3 style="margin-top:0;">Bald hier: unser erster Artikel</h3>
+            <p class="excerpt" style="-webkit-line-clamp:unset; line-clamp:unset;">Wir arbeiten gerade am ersten leading:school-Blog-Artikel. Schau bald wieder vorbei — es lohnt sich.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Kontakt ============ -->
+<section id="kontakt" class="section bg-alt">
+  <div class="container contact-grid">
+    <div class="reveal">
+      <h2 class="h2">Vereinbaren Sie ein kostenloses Erstgespräch.</h2>
+      <p class="sub" style="max-width:28rem">Erzählen Sie uns von Ihrer Schule. Wir melden uns und finden gemeinsam einen Termin, ganz unverbindlich.</p>
+      <ul class="check-list">
+        <li>
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 256 256"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm45.66,85.66-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35a8,8,0,0,1,11.32,11.32Z"/></svg>
+          Kostenlos und völlig unverbindlich
+        </li>
+        <li>
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 256 256"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm45.66,85.66-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35a8,8,0,0,1,11.32,11.32Z"/></svg>
+          Individuell auf Ihre Schule zugeschnitten
+        </li>
+        <li>
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 256 256"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm45.66,85.66-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35a8,8,0,0,1,11.32,11.32Z"/></svg>
+          Wir antworten innerhalb von zwei Werktagen
+        </li>
+      </ul>
+      <div class="contact-direct">
+        <p class="label">Lieber direkt?</p>
+        <a href="mailto:info@leadingschool.at">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 256 256"><path d="M224,44H32A12,12,0,0,0,20,56V192a20,20,0,0,0,20,20H216a20,20,0,0,0,20-20V56A12,12,0,0,0,224,44ZM193.15,68,128,127.72,62.85,68ZM44,188V83.28l75.89,69.57a12,12,0,0,0,16.22,0L212,83.28V188Z"/></svg>
+          info@leadingschool.at
+        </a>
+        <a href="tel:+43732770977">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 256 256"><path d="M224,154.8l-47.09-21.11-.18-.08a19.94,19.94,0,0,0-19,1.75,13.08,13.08,0,0,0-1.12.84l-22.31,19c-13-7.05-26.43-20.37-33.49-33.21l19.06-22.66a11.76,11.76,0,0,0,.85-1.15,20,20,0,0,0,1.66-18.83,1.42,1.42,0,0,1-.08-.18L101.2,32A20.06,20.06,0,0,0,80.42,20.15,60.27,60.27,0,0,0,28,80c0,81.61,66.39,148,148,148a60.27,60.27,0,0,0,59.85-52.42A20.06,20.06,0,0,0,224,154.8ZM176,204A124.15,124.15,0,0,1,52,80,36.29,36.29,0,0,1,80.48,44.46l18.82,42L80.14,109.28a12,12,0,0,0-.86,1.16A20,20,0,0,0,78,130.08c9.42,19.28,28.83,38.56,48.31,48A20,20,0,0,0,146,176.63a11.63,11.63,0,0,0,1.11-.85l22.43-19.07,42,18.81A36.29,36.29,0,0,1,176,204Z"/></svg>
+          +43 732 77 09 77
+        </a>
+      </div>
+    </div>
+
+    <div class="reveal" style="--d:.1s">
+      <div class="brand-frame form-frame">
+        <div class="form-card">
+          <form id="contactForm" novalidate>
+            <div class="honeypot" aria-hidden="true">
+              <label for="website">Website</label>
+              <input id="website" name="website" tabindex="-1" autocomplete="off" />
+            </div>
+            <div class="field-row">
+              <div>
+                <label for="name">Name <span class="req">*</span></label>
+                <input class="input" id="name" name="name" required autocomplete="name" placeholder="Ihr Name" />
+              </div>
+              <div>
+                <label for="school">Schule</label>
+                <input class="input" id="school" name="school" autocomplete="organization" placeholder="Name Ihrer Schule" />
+              </div>
+            </div>
+            <div class="field-row">
+              <div>
+                <label for="email">E-Mail <span class="req">*</span></label>
+                <input class="input" id="email" name="email" type="email" required autocomplete="email" placeholder="name@schule.at" />
+              </div>
+              <div>
+                <label for="phone">Telefon</label>
+                <input class="input" id="phone" name="phone" type="tel" autocomplete="tel" placeholder="Optional" />
+              </div>
+            </div>
+            <div>
+              <label for="message">Ihr Anliegen <span class="req">*</span></label>
+              <textarea class="input" id="message" name="message" rows="5" required placeholder="Wobei dürfen wir Sie und Ihre Schule unterstützen?"></textarea>
+            </div>
+            <div class="form-foot">
+              <button class="btn btn-primary btn-lg" type="submit">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 256 256"><path d="M230.14,25.86a20,20,0,0,0-19.57-5.11l-.22.07L18.44,79a20,20,0,0,0-3.06,37.25L99,157l40.71,83.65a19.81,19.81,0,0,0,18,11.38c.57,0,1.15,0,1.73-.07A19.82,19.82,0,0,0,177,237.56L235.18,45.65a1.42,1.42,0,0,0,.07-.22A20,20,0,0,0,230.14,25.86ZM156.91,221.07l-34.37-70.64,46-45.95a12,12,0,0,0-17-17l-46,46L34.93,99.09,210,46Z"/></svg>
+                Termin anfragen
+              </button>
+              <p class="hint">Wir melden uns innerhalb von zwei Werktagen.</p>
+            </div>
+            <p class="form-success" id="formSuccess" role="status">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 256 256"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm45.66,85.66-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35a8,8,0,0,1,11.32,11.32Z"/></svg>
+              Vielen Dank! Ihre Anfrage ist angekommen. Wir melden uns innerhalb von zwei Werktagen.
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ Footer ============ -->
+<footer class="site-footer">
+  <div class="brand-rule" aria-hidden="true"></div>
+  <svg class="footer-leaf" viewBox="0 0 64 64" fill="none" role="presentation" aria-hidden="true"><use href="#ls-leaf" fill="url(#ls-g-main)"/></svg>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-about">
+        <a href="#" class="logo" aria-label="leading:school, zur Startseite">
+          <svg class="leaf" viewBox="0 0 64 64" fill="none" aria-hidden="true"><use href="#ls-leaf" fill="url(#ls-g-main)"/></svg>
+          <span>leading<span class="colon">:</span>school</span>
+        </a>
+        <p>Wir stärken Schulleitung und Schulen von innen. Bewusste, wirksame Führungsarbeit für die Schule von morgen.</p>
+        <p class="funding">Ein Angebot der <strong>B.E.L. Mindfactory</strong>. Kostenlos, gefördert von
+          <a class="link-brand" href="https://www.tgw-futurewings.org" target="_blank" rel="noopener noreferrer">TGW Future Wings
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 256 256"><path d="M204,64V168a12,12,0,0,1-24,0V93L72.49,200.49a12,12,0,0,1-17-17L163,76H88a12,12,0,0,1,0-24H192A12,12,0,0,1,204,64Z"/></svg>
+          </a>.
+        </p>
+      </div>
+      <nav class="footer-col" aria-label="Footer-Navigation">
+        <h3>Navigation</h3>
+        <a href="#angebot">Angebot</a>
+        <a href="#ablauf">Ablauf</a>
+        <a href="#team">Über uns</a>
+        <a href="#blog">Blog</a>
+        <a href="#kontakt">Termin vereinbaren</a>
+      </nav>
+      <div class="footer-col">
+        <h3>Kontakt</h3>
+        <a href="mailto:info@leadingschool.at">
+          <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" fill="currentColor" viewBox="0 0 256 256"><path d="M224,44H32A12,12,0,0,0,20,56V192a20,20,0,0,0,20,20H216a20,20,0,0,0,20-20V56A12,12,0,0,0,224,44ZM193.15,68,128,127.72,62.85,68ZM44,188V83.28l75.89,69.57a12,12,0,0,0,16.22,0L212,83.28V188Z"/></svg>
+          info@leadingschool.at
+        </a>
+        <a href="tel:+43732770977">
+          <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" fill="currentColor" viewBox="0 0 256 256"><path d="M224,154.8l-47.09-21.11-.18-.08a19.94,19.94,0,0,0-19,1.75,13.08,13.08,0,0,0-1.12.84l-22.31,19c-13-7.05-26.43-20.37-33.49-33.21l19.06-22.66a11.76,11.76,0,0,0,.85-1.15,20,20,0,0,0,1.66-18.83,1.42,1.42,0,0,1-.08-.18L101.2,32A20.06,20.06,0,0,0,80.42,20.15,60.27,60.27,0,0,0,28,80c0,81.61,66.39,148,148,148a60.27,60.27,0,0,0,59.85-52.42A20.06,20.06,0,0,0,224,154.8ZM176,204A124.15,124.15,0,0,1,52,80,36.29,36.29,0,0,1,80.48,44.46l18.82,42L80.14,109.28a12,12,0,0,0-.86,1.16A20,20,0,0,0,78,130.08c9.42,19.28,28.83,38.56,48.31,48A20,20,0,0,0,146,176.63a11.63,11.63,0,0,0,1.11-.85l22.43-19.07,42,18.81A36.29,36.29,0,0,1,176,204Z"/></svg>
+          +43 732 77 09 77
+        </a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 B.E.L. Mindfactory · leading:school</p>
+      <div class="legal">
+        <a href="#">Impressum</a>
+        <a href="#">Datenschutz</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</html>

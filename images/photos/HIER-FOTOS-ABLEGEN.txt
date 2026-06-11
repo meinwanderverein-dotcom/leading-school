@@ -1,0 +1,8 @@
+Hier die Seitenfotos ablegen (Empfehlung: WebP, max. 1920px breit):
+  hero-workshop.jpg / .webp   -> Hero-Bild (Hochformat 4:5)
+  teamentwicklung.jpg         -> Angebot, grosse Karte
+  begleitung.jpg              -> Ablauf-Sektion (16:11)
+  vision.jpg                  -> Vision-Sektion (Querformat, dunkel ueberlagert)
+
+Danach in index.html die picsum.photos-URLs ersetzen,
+die Stellen sind mit data-photo="..." markiert.

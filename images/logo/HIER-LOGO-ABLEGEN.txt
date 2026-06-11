@@ -1,0 +1,7 @@
+Logo-Dateien:
+  leadingschool-logo.png  (Original-Wortmarke)
+  favicon.svg
+
+Aktuell nutzt index.html eine nachgebaute Text-Wortmarke (.logo).
+Zum Umstellen aufs PNG: <span>leading<span class="colon">:</span>school</span>
+durch <img src="images/logo/leadingschool-logo.png" alt="leading:school" style="height:28px"> ersetzen.
