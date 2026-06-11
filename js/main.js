@@ -45,7 +45,7 @@
     }, 100);
   }
 
-  // Kontaktformular (Demo: validiert und zeigt Bestätigung; kein Backend)
+  // Kontaktformular – Web3Forms
   var form = document.getElementById('contactForm');
   var success = document.getElementById('formSuccess');
   form.addEventListener('submit', function(ev){
@@ -59,8 +59,27 @@
       if (!valid) ok = false;
     });
     if (!ok) return;
-    success.classList.add('show');
-    form.querySelector('button[type=submit]').disabled = true;
-    form.querySelector('button[type=submit]').style.opacity = '.6';
+    var btn = form.querySelector('button[type=submit]');
+    btn.disabled = true;
+    btn.style.opacity = '.6';
+    fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      body: new FormData(form)
+    })
+    .then(function(res){ return res.json(); })
+    .then(function(json){
+      if (json.success) {
+        success.classList.add('show');
+      } else {
+        btn.disabled = false;
+        btn.style.opacity = '';
+        alert('Leider ist ein Fehler aufgetreten. Bitte versuche es erneut.');
+      }
+    })
+    .catch(function(){
+      btn.disabled = false;
+      btn.style.opacity = '';
+      alert('Leider ist ein Fehler aufgetreten. Bitte versuche es erneut.');
+    });
   });
 })();
